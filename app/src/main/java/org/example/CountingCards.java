@@ -3,6 +3,7 @@
  */
 package org.example;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class CountingCards {
@@ -58,4 +59,154 @@ public class CountingCards {
             array[i] = t;
         }
     }
+
+    public static void main(String[] args) {
+        long startTime, endTime, executionTime;
+        int[] shuffled;
+        final int[] ARRAY_1 = {1, 2, 3, 4, 5};
+        final int[] ARRAY_2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        final int[] ARRAY_3 = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150};
+
+        // TESTING SMALL ARRAY
+
+        System.out.print("Testing times for a small array...\n");
+        System.out.println("----------------------------------------------------");
+
+        // Testing times for first shuffle
+        System.out.println("First Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = firstShuffle(ARRAY_1);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_1));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.println("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+
+        // Testing times for second shuffle
+        System.out.println("Second Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = secondShuffle(ARRAY_1);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_1));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.println("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+
+        // Testing times for third shuffle
+        System.out.println("Third Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = ARRAY_1.clone();
+        thirdShuffle(shuffled);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_1));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.print("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+        System.out.println("----------------------------------------------------\n");
+
+
+        // TESTING MEDIUM ARRAY
+
+        System.out.print("Testing times for a medium array...\n");
+        System.out.println("----------------------------------------------------");
+
+        // Testing times for first shuffle
+        System.out.println("First Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = firstShuffle(ARRAY_2);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_2));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.println("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+
+        // Testing times for second shuffle
+        System.out.println("Second Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = secondShuffle(ARRAY_2);
+    
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_2));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.println("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+
+        // Testing times for third shuffle
+        System.out.println("Third Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = ARRAY_2.clone();
+        thirdShuffle(shuffled);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_2));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.print("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+        System.out.println("----------------------------------------------------\n");
+
+
+        // TESTING LARGE ARRAY
+
+        System.out.print("Testing times for a large array...\n");
+        System.out.println("----------------------------------------------------");
+
+        // Testing times for first shuffle
+        System.out.println("First Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = firstShuffle(ARRAY_3);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_3));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.println("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+
+        // Testing times for second shuffle
+        System.out.println("Second Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = secondShuffle(ARRAY_3);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_3));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.println("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+
+        // Testing times for third shuffle
+        System.out.println("Third Shuffle: ");
+        startTime = System.nanoTime();
+        
+        shuffled = ARRAY_3.clone();
+        thirdShuffle(shuffled);
+
+        endTime = System.nanoTime();
+        executionTime = endTime - startTime;
+
+        System.out.println("Original: " + Arrays.toString(ARRAY_3));
+        System.out.println("Shuffled: " + Arrays.toString(shuffled));
+        System.out.print("Execution time of shuffle: " + executionTime + " nanoseconds\n");
+        System.out.println("----------------------------------------------------");
+    }
 }
+    
+
